@@ -21,12 +21,12 @@ data "ibm_space" "spacedata" {
 data "ibm_app_domain_shared" "domain" {
   name = "mybluemix.net"
 }
-
+/*
 data "archive_file" "app" {
   type        = "zip"
   source_dir = "src"
   output_path = "app.zip"
-}
+}*/
 
 resource "ibm_app_route" "approute-demo-001" {
   domain_guid = data.ibm_app_domain_shared.domain.id
