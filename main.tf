@@ -34,12 +34,6 @@ resource "ibm_app_route" "approute-demo-001" {
   host        = "cf-demo-${var.environment}-001"
 }
 
-data "archive_file" "app" {
-  type        = "zip"
-  source_dir = "src"
-  output_path = "app.zip"
-}
-
 resource "ibm_app" "cf-demo-001" {
   name                 = "cf-demo-${var.environment}-001"
   space_guid           = data.ibm_space.spacedata.id
